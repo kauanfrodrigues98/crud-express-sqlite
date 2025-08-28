@@ -55,7 +55,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const db = await initDB(false);
+  const db = await initDB(true);
   try {
     const user = await db.all('SELECT * FROM users WHERE id = ?', [id]);
 
