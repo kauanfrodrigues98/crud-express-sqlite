@@ -7,9 +7,8 @@ const router = Router({
 });
 
 router.get('/run-migrations', async (req, res) => {
+  const db = await initDB(false);
   try {
-    await initDB(false);
-  
     res.send({
       message: 'Migrations executed with successfully',
     });
