@@ -7,7 +7,7 @@ const router = Router({
 });
 
 router.get('/run-migrations', async (req, res) => {
-  const db = await initDB(false);
+  const db = await initDB(true);
   try {
     res.send({
       message: 'Migrations executed with successfully',
@@ -55,7 +55,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const db = await initDB(true);
+  const db = await initDB(false);
   try {
     const user = await db.all('SELECT * FROM users WHERE id = ?', [id]);
 
