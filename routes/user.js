@@ -24,11 +24,6 @@ router.get('/run-migrations', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-  // Primeiro tenta pegar do cache
-  // const cachedUsers = getCache('users');
-  // if (cachedUsers) {
-  //   return res.json({ fromCache: true, data: cachedUsers });
-  // }
 
   const db = await initDB(false);
   try {
