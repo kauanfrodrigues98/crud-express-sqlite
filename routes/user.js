@@ -29,8 +29,6 @@ router.get('/', async (req, res) => {
   try {
     const users = await db.all('SELECT * FROM users');
 
-    // setCache('users', users, 60000);
-
     res.send({
       message: 'Users retrieved successfully',
       data: users,
