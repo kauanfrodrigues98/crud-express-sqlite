@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { initDB } from '../database/sqlite.js';
-// import { getCache, setCache, clearCache } from '../cache/cache.js';
 
 const router = Router({
   caseSensitive: true
