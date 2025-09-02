@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { initDB } from '../database/sqlite.js';
-// import { getCache, setCache, clearCache } from '../cache/cache.js';
 
 const router = Router({
   caseSensitive: true
@@ -25,17 +24,10 @@ router.get('/run-migrations', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-  // Primeiro tenta pegar do cache
-  // const cachedUsers = getCache('users');
-  // if (cachedUsers) {
-  //   return res.json({ fromCache: true, data: cachedUsers });
-  // }
 
   const db = await initDB(false);
   try {
     const users = await db.all('SELECT * FROM users');
-
-    // setCache('users', users, 60000);
 
     res.send({
       message: 'Users retrieved successfully',
