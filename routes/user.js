@@ -9,7 +9,7 @@ router.get('/run-migrations', async (req, res) => {
   const db = await initDB(true);
   try {
     res.send({
-      message: 'Migrations executed successfully',
+      message: 'Migrations executed',
     });
   } catch(error) {
     return res.status(500).send({
