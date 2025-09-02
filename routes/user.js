@@ -14,7 +14,7 @@ router.get('/run-migrations', async (req, res) => {
   } catch(error) {
     return res.status(500).send({
       status: 'error',
-      message: 'There was an error running migrations',
+      message: 'There was an error',
       details: error.message,
     });
   } finally {
